@@ -1,16 +1,24 @@
-public class Main{
-    public static void main(String[] args) {
-        Task task = new Task();
-        
-        task.userId=101;
-        task.taskName="maths work";
-        task.taskDiscription="arthematic operations";
-        System.out.println("Task details are ");
-        System.out.println("id of an user is "+task.userId);
-        System.out.println("Name of the task is :"+task.taskName);
-        System.out.println("Task discription is "+task.taskDiscription);
-        
+import src.Task;
 
-        
+public class Main {
+    public static void main(String[] args) {
+       
+        Task task = new Task();
+        task.userId = 101;
+        task.taskName = "Learn Java";
+        task.taskDescription = "Complete the basic Java tutorial.";
+        task.deadline = "2025-01-20"; 
+
+       
+        String taskJson = "{\n" +
+                          "  \"userId\": " + task.userId + ",\n" +
+                          "  \"taskName\": \"" + task.taskName + "\",\n" +
+                          "  \"taskDescription\": \"" + task.taskDescription + "\",\n" +
+                          "  \"deadline\": \"" + task.deadline + "\"\n" +
+                          "}";
+
+       
+        System.out.println("Task in JSON format:");
+        System.out.println(taskJson);
     }
 }
